@@ -50,6 +50,7 @@ namespace GunHomeWork
             }
         }
 
+        #region OneReload
         public void OneReload()
         {
             if (AmmoCount < Ammolimit)
@@ -62,7 +63,9 @@ namespace GunHomeWork
                 Console.WriteLine("Full magazine");
             }
         }
+#endregion
 
+        #region Reload
         public void Reload()
         {
             
@@ -78,11 +81,12 @@ namespace GunHomeWork
             }
             
         }
+        #endregion
 
-
+        #region Shoot
         public void Shoot()
         {
-            if (Mode != null || Guntype=="Deagle")
+            if (Mode != null )
             {
                 if (Mode == "oneshoot")
                 {
@@ -96,13 +100,23 @@ namespace GunHomeWork
                         Console.WriteLine("please change magazine");
                     }
                 }
+                else
+                {
+                    if (AmmoCount > 0)
+                    {
+                        for (int i = AmmoCount; i > 0; i--) ;
+                    }
+                    else Console.WriteLine("please change magazine");
+                }
             }
             else
             {
                 Console.WriteLine("please unlock gun fire");
             }
         }
+        #endregion
 
+        #region UnlockFire
         public void UnlockFire(string mode)
         {
             if (Guntype != "Deagle")
@@ -128,8 +142,9 @@ namespace GunHomeWork
                 Console.WriteLine("Deagle has not mode");
             }
         }
+        #endregion
 
-        
+
 
     }
 }
