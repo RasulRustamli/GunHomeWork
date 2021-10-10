@@ -47,21 +47,28 @@ namespace GunHomeWork
             else
             {
                Console.WriteLine("Please Enter Normal Weapon name");
+                
             }
         }
 
         #region OneReload
-        public void OneReload()
+        public void OneReload(int say)
         {
-            if (AmmoCount < Ammolimit)
+            for(int i = 0; i <= say; i++)
             {
-                AmmoCount += 1;
-                FullAmmo -= 1;
+                if (AmmoCount < Ammolimit)
+                {
+                    AmmoCount += 1;
+                    FullAmmo -= 1;
+                }
+                else
+                {
+                    Console.WriteLine("Full magazine");
+                    break;
+                }
             }
-            else
-            {
-                Console.WriteLine("Full magazine");
-            }
+           
+            
         }
 #endregion
 
