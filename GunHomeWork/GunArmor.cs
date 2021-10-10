@@ -86,28 +86,25 @@ namespace GunHomeWork
         #region Shoot
         public void Shoot()
         {
-            if (Mode != null )
+            if (Mode != null)
             {
-                if (Mode == "oneshoot")
+                if(AmmoCount>0)
                 {
 
-                    if (AmmoCount > 0)
+
+                    if (Mode == "oneshoot")
                     {
                         AmmoCount -= 1;
                     }
-                    else
+
+
+                    else                      //auto shot click time
                     {
-                        Console.WriteLine("please change magazine");
-                    }
+                         for (int i = AmmoCount; i > 0; i--) ;
+                        
+                    }         
                 }
-                else
-                {
-                    if (AmmoCount > 0)
-                    {
-                        for (int i = AmmoCount; i > 0; i--) ;
-                    }
-                    else Console.WriteLine("please change magazine");
-                }
+                else Console.WriteLine("please change magazine");
             }
             else
             {
